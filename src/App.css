@@ -7,6 +7,86 @@
   pointer-events: none;
 }
 
+.dashboard{
+  background-color: #F8F7F3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0%;
+  padding: 5%;
+}
+
+.scoreCards_general{
+  background-color: #F99746;
+  padding: 50px 80px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0% 3%;
+  text-align: left;
+color: white;
+}
+
+.scoreCards_general_title_div{
+  display: flex;
+  height: 40px;
+  align-items:flex-end
+}
+
+.scoreCards_general_title{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0%;
+  padding: 0%;
+  margin-right: 20px;
+}
+
+.scoreCards_general_info_users{
+
+  margin: 0%;
+  padding: 0%;
+}
+
+.scoreCards{
+  padding: 20px 10px;
+  border-radius: 10px;
+  background-color: white;
+  width: 44%;
+  margin: 2%;
+}
+
+.scoreCards_title{
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.scoreCards_info{
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0%;
+}
+
+.scoreCards_info > span{
+  opacity: 0.2;
+}
+
+.scoreCards_general_graphs{
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-between;
+}
+.scoreCards_general_graph1{
+  background-color: aliceblue;
+  width: 500px;
+  height: 300px;
+  
+}
+
+.scoreCards_general_graph2{
+  background-color: aliceblue;
+  width: 500px;
+  height: 300px;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
