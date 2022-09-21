@@ -1,35 +1,20 @@
 import { Box, Button, Card, CardContent, Container, Divider, Grid, InputLabel, MenuItem, TextField, Typography } from '@mui/material'
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
+import Context from './Context/Context';
 
 export default function MainForm(props) {
   const { setScore, setFormQuestions } = props;
+  const{ q1} = useContext(Context)
   const [formData, setFormData] = useState({
-    'What is your name?': "",
-    'How old are you?': "",
-    'How many houses do you own?': "",
-    'How many children do you have?': "",
-    'Do you save money?': "",
-    q6: "",
-    q7: "",
-    q8: "",
-    q9: "",
-    q10: "",
-    q11: "",
-    q12: "",
-    q13: "",
-    q14: "",
-    q15: "",
+    [q1._id]: ""
   });
+
+  console.log(formData)
 
   const [isLoading, setIsLoading] = useState(false);
 
-  function handleChange(event) {
-    setFormData((previousState) => ({
-      ...previousState,
-      [event.target.id]: event.target.value,
-    }));
-  }
+
 
   function handleChangeSelect(event) {
     setFormData((previousState) => ({
@@ -39,22 +24,8 @@ export default function MainForm(props) {
   }
 
   async function handleSubmit(event) {
-    event.preventDefault();
-    setIsLoading(true);
-    const finalData = {
-      ...formData,
-      'How old are you?': parseInt(formData['How old are you?']),
-      'How many houses do you own?': parseInt(formData['How many houses do you own?']),
-      'How many children do you have?': parseInt(formData['How many children do you have?']),
-    };
-    setFormQuestions(finalData);
     try {
-      const response = await axios.post(`http://localhost:8080/surveys`, formData,
-        {
-          headers: {
-            "Content-Type": "application/json"
-          }
-        });
+      const response =  axios.post(`http://localhost:8080/surveys`, formData);
       setIsLoading(false);
       setScore(response.data);
     } catch (error) {
@@ -83,58 +54,32 @@ export default function MainForm(props) {
           <Grid container spacing={5}>
 
 
-
             <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>Do you save money?</InputLabel>
+              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>{q1.text}</InputLabel>
               <TextField
                 required
                 fullWidth
-                id="Do you save money?"
-                name="Do you save money?"
-                value={formData['Do you save money?']}
+                id={[q1._id]}
+                name={[q1._id]}
+                value={formData[q1._id]}
                 select
                 onChange={handleChangeSelect}
+                label="Choose an option"
               >
-                <MenuItem value="">
-                  <em>Choose an option</em>
-                </MenuItem>
-                <MenuItem value={true}>
-                  Yes
-                </MenuItem>
-                <MenuItem value={false}>
-                  No
-                </MenuItem>
-
-              </TextField>
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>Giving a gift, would it put a strain on your finances for the month?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="Giving a gift, would it put a strain on your finances for the month?"
-                name="Giving a gift, would it put a strain on your finances for the month?"
-                value={formData['Giving a gift, would it put a strain on your finances for the month?']}
-                select
-                onChange={handleChangeSelect}
-              >
-                <MenuItem value="Choose an option">
-                  <em>Choose an option</em>
-                </MenuItem>
-                <MenuItem value={"Never"}>
+         
+                <MenuItem value={"0"}>
                   Never
                 </MenuItem>
-                <MenuItem value={"Rarely"}>
+                <MenuItem value={"1"}>
                   Rarely
                 </MenuItem>
-                <MenuItem value={"Sometimes"}>
+                <MenuItem value={"2"}>
                   Sometimes
                 </MenuItem>
-                <MenuItem value={"Often"}>
+                <MenuItem value={"3"}>
                   Often
                 </MenuItem>
-                <MenuItem value={"Always"}>
+                <MenuItem value={"4"}>
                   Always
                 </MenuItem>
 

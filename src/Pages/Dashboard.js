@@ -12,6 +12,7 @@ import Q9Card from '../Components/Cards/Q9Card'
 import Q10Card from '../Components/Cards/Q10Card'
 
 export default function Dashboard() {
+    
   return (
     <div className='dashboard'>
     

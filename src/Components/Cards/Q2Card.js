@@ -1,10 +1,13 @@
-import React from 'react'
+import React,  {useContext}  from 'react'
 import Q2Chart from '../Graphs/Q2Chart';
+import Context from '../Context/Context';
 
 export default function Q2Card() {
+  const{ q2} = useContext(Context)
+
   return (
     <div className='scoreCards'>
-    <h3 className='scoreCards_title'> Because of my money situation...I will never have the things I want in life</h3>
+    <h3 className='scoreCards_title'>{q2.text}</h3>
     <Q2Chart/>
     <p className='scoreCards_info_users'>100000 Answers</p>
     </div>

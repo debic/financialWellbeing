@@ -6,18 +6,18 @@ export default function GeneralScoreCard() {
 
 const[numb, setNumb] = useState("90") 
 
-    async function getNumb() {
-        try {
-          const res = await axios.get(
-            "http://localhost:8080/answers/count", {params: {question: "Do you save money?"}}
-          );
-          console.log(res)
-        } catch (err) {
-          console.log(err);
-        }
-      }
+    // async function getNumb() {
+    //     try {
+    //       const res = await axios.get(
+    //         "http://localhost:8080/answers/count", {params: {question: "Do you save money?"}}
+    //       );
+    //       console.log(res)
+    //     } catch (err) {
+    //       console.log(err);
+    //     }
+    //   }
 
-      getNumb()
+    //   getNumb()
 
   return (
     <div className='scoreCards_general'>
