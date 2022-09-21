@@ -1,4 +1,4 @@
-import React, {useState,useContext} from 'react'
+import React, {useState,useContext, useEffect} from 'react'
 import axios from 'axios'
 import Q1Chart from '../Graphs/Q1Chart';
 import Context from '../Context/Context';
@@ -18,19 +18,27 @@ export default function Q1Card() {
       const res = await axios.get(
       `http://localhost:8080/answers/count/${q1._id}`
       );
-
-      console.log(res)
+     // console.log(res.data)
+      setNever(res.data["0"])
+      setRarely(res.data["1"])
+      setSometimes(res.data["2"])
+      setOften(res.data["3"])
+      setAlways(res.data["4"])
     } catch (err) {
       console.log(err);
     }
   }
 
-  getNumb()
+
+  useEffect(() => {
+    getNumb()
+  }, [])
+
 
   return (
     <div className='scoreCards'>
         <h3 className='scoreCards_title'>{q1.text}</h3>
-        <Q1Chart never={never}/>
+        <Q1Chart never={never} rarely={rarely} sometimes={sometimes} often={often} always={always}/>
         <p className='scoreCards_info_users'>100000 Answers</p>
     </div>
   )

@@ -30,8 +30,8 @@ import Chart from "react-apexcharts";
             series: [
               {
                 name: "series-1",
-                data: [2, 40, 55, 50, 49],
-              
+                data: [this.props.never, this.props.rarely, this.props.sometimes, this.props.often, this.props.always],
+      
               }
             ],
          
