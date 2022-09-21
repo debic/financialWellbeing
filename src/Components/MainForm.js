@@ -7,7 +7,7 @@ export default function MainForm(props) {
   const { setScore, setFormQuestions } = props;
   const{ q1} = useContext(Context)
   const [formData, setFormData] = useState({
-    [q1._id]: ""
+    [q1._id]: "",
   });
 
   console.log(formData)
