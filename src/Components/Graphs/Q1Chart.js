@@ -12,7 +12,7 @@ import Chart from "react-apexcharts";
                 fill: {
                     colors: [function({ value, seriesIndex, w }) {
                       if(value === 55) {
-                          return '#0C0C0C'
+                          return '#6EBBE5'
                       } else if (value >= 55 && value < 80) {
                           return '#6EBBE5'
                       } else {

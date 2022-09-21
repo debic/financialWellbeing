@@ -4,8 +4,22 @@ import FormResults from './Pages/FormResults';
 
 import Dashboard from './Pages/Dashboard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from 'axios';
 
 function App() {
+
+  async function getquestions() {
+    try {
+      const res = await axios.get(
+        "http://localhost:8080/questions"
+      );
+      console.log(res)
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+  getquestions()
   return (
     <BrowserRouter>
     <div className="App">

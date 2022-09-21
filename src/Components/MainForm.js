@@ -82,64 +82,7 @@ export default function MainForm(props) {
         <CardContent>
           <Grid container spacing={5}>
 
-            <Grid item xs={12} sx={{ mb: 0 }}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your name?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="What is your name?"
-                name="What is your name?"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData['What is your name?']}
-                onChange={handleChange}
-              />
-            </Grid>
 
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>How old are you?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                type="number"
-                id="How old are you?"
-                name="How old are you?"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData['How old are you?']}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>How many houses do you own?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                type="number"
-                id="How many houses do you own?"
-                name="How many houses do you own?"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData['How many houses do you own?']}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>How many children do you have?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                type="number"
-                id="How many children do you have?"
-                name="How many children do you have?"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData['How many children do you have?']}
-                onChange={handleChange}
-              />
-            </Grid>
 
             <Grid item xs={12}>
               <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>Do you save money?</InputLabel>
@@ -176,7 +119,7 @@ export default function MainForm(props) {
                 select
                 onChange={handleChangeSelect}
               >
-                <MenuItem value="">
+                <MenuItem value="Choose an option">
                   <em>Choose an option</em>
                 </MenuItem>
                 <MenuItem value={"Never"}>
