@@ -56,7 +56,6 @@ export default function MainForm(props) {
         });
       setIsLoading(false);
       setScore(response.data);
-      return response.data;
     } catch (error) {
       console.log(error);
       setScore(null);
@@ -165,97 +164,38 @@ export default function MainForm(props) {
               </TextField>
             </Grid>
 
-            {/* <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="q6"
-                name="q6"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData.q6}
-                onChange={handleChange}
-              />
-            </Grid>
-
             <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
+              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>Giving a gift, would it put a strain on your finances for the month?</InputLabel>
               <TextField
                 required
                 fullWidth
-                id="q7"
-                name="q7"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData.q7}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="q8"
-                name="q8"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData.q8}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="q9"
-                name="q9"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData.q9}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="q10"
-                name="q10"
-                variant="standard"
-                placeholder="Enter your answer"
-                value={formData.q10}
-                onChange={handleChange}
-              />
-            </Grid>
-
-            <Grid item xs={12}>
-              <InputLabel sx={{ justifyContent: "start", display: "flex", mb: 1 }}>What is your income?</InputLabel>
-              <TextField
-                required
-                fullWidth
-                id="q11"
-                name="q11"
-                value={formData.q11}
+                id="Giving a gift, would it put a strain on your finances for the month?"
+                name="Giving a gift, would it put a strain on your finances for the month?"
+                value={formData['Giving a gift, would it put a strain on your finances for the month?']}
                 select
                 onChange={handleChangeSelect}
               >
                 <MenuItem value="">
                   <em>Choose an option</em>
                 </MenuItem>
-                {q11answers.map((option) => (
-                  <MenuItem key={option} value={option}>
-                    {option}
-                  </MenuItem>
-                ))}
+                <MenuItem value={"Never"}>
+                  Never
+                </MenuItem>
+                <MenuItem value={"Rarely"}>
+                  Rarely
+                </MenuItem>
+                <MenuItem value={"Sometimes"}>
+                  Sometimes
+                </MenuItem>
+                <MenuItem value={"Often"}>
+                  Often
+                </MenuItem>
+                <MenuItem value={"Always"}>
+                  Always
+                </MenuItem>
+
               </TextField>
-            </Grid> */}
+            </Grid>
 
           </Grid>
         </CardContent>
