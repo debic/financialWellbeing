@@ -1,4 +1,4 @@
-import { CardContent, Container, Divider, Typography, Grid } from '@mui/material';
+import { CardContent, Container, Divider, Typography, Grid, Box } from '@mui/material';
 import React from 'react'
 
 export default function FormResults(props) {
@@ -16,9 +16,17 @@ export default function FormResults(props) {
 
             <Divider />
             <CardContent>
-                <Grid container spacing={5}>
-
+                <Grid container sx={{ border: 1, mb: 2, flexDirection: 'column', alignItems: 'flex-start', p:1 }}>
+                    <Box sx={{fontWeight: 'bold'}}>Because of my money situation I will never have the things I want in life</Box>
+                    <Box>Not at all</Box>
+                    <Box>Your score was lower than most of the citizens. Here is a link to improve... </Box>
                 </Grid>
+                <Grid container sx={{ border: 1, mb: 2, flexDirection: 'column', alignItems: 'flex-start', p:1 }}>
+                    <Box sx={{fontWeight: 'bold'}}>I am just getting by financially</Box>
+                    <Box>Not at all</Box>
+                    <Box>Your score was lower than most of the citizens. Here is a link to improve...</Box>
+                </Grid>
+
             </CardContent>
 
         </Container>
