@@ -8,32 +8,52 @@ class Q2Chart extends React.Component {
 
     this.state = {
     
-      series: [44, 55, 13, 43, 22],
+      series: [25, 15, 44, 55, 41, 17],
       options: {
         chart: {
-          width: 380,
+          width: '100%',
           type: 'pie',
         },
-        labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
-        responsive: [{
-          breakpoint: 480,
-          options: {
-            chart: {
-              width: 200
-            },
-            legend: {
-              position: 'bottom'
-            },
-            fill: {
-              colors: ['#1A73E8', '#B32824']
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        dataLabels: {
+          style: {
+            fontSize: '90px',
+            fontWeight: 'bold',
+            colors: ['#ffffff']
+        },
+          },
+        theme: {
+          monochrome: {
+            enabled: true,
+            color: '#F99746',
+            shadeTo: 'light',
+            shadeIntensity: 1
+        },
+        },
+        plotOptions: {
+          pie: {
+            dataLabels: {
+              offset: -5
             }
+            
           }
-        }]
+        },
+      
+        dataLabels: {
+          formatter(val, opts) {
+            const name = opts.w.globals.labels[opts.seriesIndex]
+            return [name, val.toFixed(1) + '%']
+          }
+        },
+        legend: {
+          show: false
+        }
       },
     
     
     };
   }
+
       
         render() {
           return (
