@@ -4,12 +4,13 @@ import FormResults from './FormResults';
 
 export default function FormPage() {
     const [score, setScore] = useState(null);
+    const [formQuestions, setFormQuestions] = useState({});
     return (
         <>
             {!score ? (
-                <MainForm setScores={setScore} />
+                <MainForm setScores={setScore} setFormQuestions={setFormQuestions} />
             ) : (
-                <FormResults scores={score} />
+                <FormResults scores={score} formQuestions={formQuestions} />
             )}
         </>
     )

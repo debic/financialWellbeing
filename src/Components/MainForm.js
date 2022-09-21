@@ -3,7 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 
 export default function MainForm(props) {
-  const { setScore } = props;
+  const { setScore, setFormQuestions } = props;
   const [formData, setFormData] = useState({
     'What is your name?': "",
     'How old are you?': "",
@@ -47,6 +47,7 @@ export default function MainForm(props) {
       'How many houses do you own?': parseInt(formData['How many houses do you own?']),
       'How many children do you have?': parseInt(formData['How many children do you have?']),
     };
+    setFormQuestions(finalData);
     try {
       const response = await axios.post(`http://localhost:8080/surveys`, formData,
         {
