@@ -30,13 +30,13 @@ import Chart from "react-apexcharts";
             series: [
               {
                 name: "series-1",
-                data: [this.props.never, this.props.rarely, this.props.sometimes, this.props.often, this.props.always],
+                data: [this.props.first, this.props.sec, this.props.third, this.props.four, this.props.fifth],
       
               }
             ],
          
             
-           // this.props.numb
+       
               
           };
         }
