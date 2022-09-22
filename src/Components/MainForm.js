@@ -4,11 +4,9 @@ import React, { useState,useContext } from 'react'
 import Context from './Context/Context';
 
 export default function MainForm(props) {
-  const { setScore, setFormQuestions } = props;
+  const { setScore, setFormQuestions, formData, setFormData } = props;
   const{ q1} = useContext(Context)
-  const [formData, setFormData] = useState({
-    [q1._id]: ""
-  });
+
 
   console.log(formData)
 
