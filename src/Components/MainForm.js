@@ -65,8 +65,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q1._id]}
-                name={[q1._id]}
+                id={[q1._id].toString()}
+                name={[q1._id].toString()}
                 value={formData[q1._id]}
                 select
                 onChange={handleChangeSelect}
@@ -74,19 +74,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q1.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q1.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q1.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q1.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q1.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -97,8 +97,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q2._id]}
-                name={[q2._id]}
+                id={[q2._id].toString()}
+                name={[q2._id].toString()}
                 value={formData[q2._id]}
                 select
                 onChange={handleChangeSelect}
@@ -106,19 +106,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q2.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q2.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q2.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q2.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q2.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -129,8 +129,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q3._id]}
-                name={[q3._id]}
+                id={[q3._id].toString()}
+                name={[q3._id].toString()}
                 value={formData[q3._id]}
                 select
                 onChange={handleChangeSelect}
@@ -138,19 +138,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q3.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q3.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q3.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q3.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q3.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -161,8 +161,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q4._id]}
-                name={[q4._id]}
+                id={[q4._id].toString()}
+                name={[q4._id].toString()}
                 value={formData[q4._id]}
                 select
                 onChange={handleChangeSelect}
@@ -170,19 +170,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q4.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q4.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q4.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q4.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q4.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -193,8 +193,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q5._id]}
-                name={[q5._id]}
+                id={[q5._id].toString()}
+                name={[q5._id].toString()}
                 value={formData[q5._id]}
                 select
                 onChange={handleChangeSelect}
@@ -202,19 +202,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q5.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q5.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q5.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q5.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q5.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -225,8 +225,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q6._id]}
-                name={[q6._id]}
+                id={[q6._id].toString()}
+                name={[q6._id].toString()}
                 value={formData[q6._id]}
                 select
                 onChange={handleChangeSelect}
@@ -234,19 +234,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q6.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q6.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q6.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q6.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q6.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
@@ -257,8 +257,8 @@ export default function MainForm(props) {
               <TextField
                 required
                 fullWidth
-                id={[q7._id]}
-                name={[q7._id]}
+                id={[q7._id].toString()}
+                name={[q7._id].toString()}
                 value={formData[q7._id]}
                 select
                 onChange={handleChangeSelect}
@@ -266,19 +266,19 @@ export default function MainForm(props) {
               >
 
                 <MenuItem value={"0"}>
-                  Never
+                  {[q7.possibleAnswers[0]]}
                 </MenuItem>
                 <MenuItem value={"1"}>
-                  Rarely
+                  {[q7.possibleAnswers[1]]}
                 </MenuItem>
                 <MenuItem value={"2"}>
-                  Sometimes
+                  {[q7.possibleAnswers[2]]}
                 </MenuItem>
                 <MenuItem value={"3"}>
-                  Often
+                  {[q7.possibleAnswers[3]]}
                 </MenuItem>
                 <MenuItem value={"4"}>
-                  Always
+                  {[q7.possibleAnswers[4]]}
                 </MenuItem>
 
               </TextField>
