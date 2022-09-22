@@ -5,11 +5,11 @@ import Context from '../Context/Context';
 import axios from 'axios';
 
 export default function Q3Card() {
-  const[first, setFirst] = useState("90") 
-  const[sec, setSec] = useState("90") 
-  const[third, setThird] = useState("90") 
-  const[four, setFour] = useState("90") 
-  const[fifth, setFifth] = useState("90") 
+  const[first, setFirst] = useState("") 
+  const[sec, setSec] = useState("") 
+  const[third, setThird] = useState("") 
+  const[four, setFour] = useState("") 
+  const[fifth, setFifth] = useState("") 
 
   const{ q3} = useContext(Context)
 
@@ -32,13 +32,18 @@ export default function Q3Card() {
 
 
   useEffect(() => {
+    if(q3)
     getNumb()
-  }, [])
+  }, [q3])
+    
   return (
     <div className='scoreCards'>
+    {first && <>
     <h3 className='scoreCards_title'>{q3.text}</h3>
-    <Q3Chart first={first} sec={sec} third={third} four={four} fifth={fifth}/>
-    <p className='scoreCards_info_users'>100000 Answers</p>
-    </div>
+           <Q3Chart first={first} sec={sec} third={third} four={four} fifth={fifth}/>
+          <p className='scoreCards_info_users'>100000 Answers</p>
+    </>
+        }
+        </div>
   )
 }

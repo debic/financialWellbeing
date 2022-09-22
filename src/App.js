@@ -2,7 +2,7 @@ import './App.css';
 import React, {useEffect,useState} from 'react'
 import FormPage from './Pages/FormPage';
 import FormResults from './Pages/FormResults';
-
+import Navbar from './Components/Navbar';
 import Dashboard from './Pages/Dashboard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Context from './Components/Context/Context';
@@ -20,13 +20,11 @@ function App() {
   const [showForm, setShowForm] = useState(false) 
 
 
-
   async function getquestions() {
     try {
       const res = await axios.get(
         "http://localhost:8080/questions"
       );
-      console.log(res.data)
       setQ1(res.data[0])
       setQ2(res.data[1])
       setQ3(res.data[2])
@@ -47,9 +45,9 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-    <Context.Provider value={{ q1,q2,q3,q4,q5,q6, q7, showForm}}>
-
-      <header className="">
+    <Context.Provider value={{ q1,q2,q3,q4,q5,q6, q7}}>
+      <Navbar/>
+      <header className="page">
       <Routes>
       <Route path="/" element={ <Dashboard />}/>
       <Route path="/FormPage" element={ <FormPage/>}/>

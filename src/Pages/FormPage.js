@@ -8,7 +8,7 @@ export default function FormPage() {
     const [formQuestions, setFormQuestions] = useState({});
     const{ showForm} = useContext(Context)
 
-   if(!showForm) return <div>form loading...</div>
+  // if(!showForm) return <div>form loading...</div>
     return (
         <>
             {!score ? (
