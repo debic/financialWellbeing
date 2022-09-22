@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Chart from "react-apexcharts";
 
 
-class Q2Chart extends Component {
+class Q4Chart extends Component {
   constructor(props) {
     super(props);
 
@@ -60,5 +60,5 @@ class Q2Chart extends Component {
   }
 }
 
-export default Q2Chart;
+export default Q4Chart;
 
