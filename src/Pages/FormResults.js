@@ -3,14 +3,11 @@ import React,{useContext, useEffect} from 'react'
 import Context from '../Components/Context/Context'
 
 export default function FormResults(props) {
-    const{ q1, q2, q3, q4, q5, q6, q7} = useContext(Context)
-    const { score, formQuestions, formData } = props;
+    const{ q1, q2, q3, q4, q5, q6, q7, formData, score} = useContext(Context)
 
-    console.log(formData);
-    console.log(q1);
-    console.log(q1.possibleAnswers);
-
-
+    useEffect(() => {
+        console.log(formData)
+    }, [])
 
     return (
         <Container component="main" sx={{ backgroundColor: "#F8F7F3", width: "100%", pt: 10 }}>

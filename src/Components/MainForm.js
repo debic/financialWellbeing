@@ -1,20 +1,16 @@
 import { Box, Button, Card, CardContent, Container, Divider, Grid, InputLabel, MenuItem, TextField, Typography } from '@mui/material'
 import axios from 'axios';
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Context from './Context/Context';
 
 export default function MainForm(props) {
-  const { setFormQuestions, formData, setFormData, setScore } = props;
 
-  const { q1, q2, q3, q4, q5, q6, q7 } = useContext(Context)
-  
-  console.log(formData)
-
+  const { q1, q2, q3, q4, q5, q6, q7, setFormQuestions, formData, setFormData, setScore } = useContext(Context)
   const [isLoading, setIsLoading] = useState(false);
-
-
-
+  const navigate = useNavigate();
   function handleChangeSelect(event) {
+
     setFormData((previousState) => ({
       ...previousState,
       [event.target.name]: event.target.value,
@@ -22,10 +18,12 @@ export default function MainForm(props) {
   }
 
   async function handleSubmit(event) {
+    console.log(formData);
     try {
       const response = axios.post(`http://localhost:8080/surveys`, formData);
       setIsLoading(false);
       setScore(response.data);
+      navigate('/FormResults');
     } catch (error) {
       console.log(error);
       setScore(null);
