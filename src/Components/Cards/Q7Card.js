@@ -17,7 +17,6 @@ export default function Q1Card() {
       const res = await axios.get(
       `http://localhost:8080/answers/count/${q7._id}`
       );
-     // console.log(res.data)
      setFirst(res.data["0"])
      setSec(res.data["1"])
      setThird(res.data["2"])
