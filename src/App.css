@@ -4,6 +4,11 @@
   background-color: #f8f7f3;
 }
 
+.logo{
+  margin-top: 20%;
+  width:  50%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -22,12 +27,12 @@
   background-color: #F99746;
   padding: 20px 10px;
   border-radius: 10px;
-  width: 44%;
+  width: 92%;
   margin: 2%;
   text-align: left;
 color: white;
 display: flex;
-flex-direction: column;
+justify-content: space-around;
 align-items: center;
 }
 
@@ -67,9 +72,11 @@ align-items: center;
 }
 
 .scoreCards_info{
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   margin: 0%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .scoreCards_info > span{
@@ -90,6 +97,63 @@ align-items: center;
 
 #SvgjsText1241{
   fill: aliceblue !important;
+}
+
+
+.separator {
+  margin: 3rem 0;
+  border-bottom: 1px dashed #fff;
+}
+
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.text-gray {
+  color: #aaa;
+}
+
+.page{
+  width: 85vw;
+  margin-left: 10vw;
+  padding-left: 5%;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.vertical-nav {
+  min-width: 17rem;
+  width: 15vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+
+.page-content {
+  width: calc(100% - 17rem);
+  margin-left: 17rem;
+  transition: all 0.4s;
+}
+
+/* for toggle behavior */
+
+#sidebar.active {
+  margin-left: -17rem;
+}
+
+#content.active {
+  width: 100%;
+  margin: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {

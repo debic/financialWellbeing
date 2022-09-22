@@ -3,7 +3,7 @@ import React,{useContext, useEffect} from 'react'
 import Context from '../Components/Context/Context'
 
 export default function FormResults(props) {
-    const{ q1, q2, q3, q4, q5, q6, q7, formData, score} = useContext(Context)
+    const{ q1, q2, q3, q4, q5, q6, q7, formData, generalScore} = useContext(Context)
 
     useEffect(() => {
         console.log(formData)
@@ -23,7 +23,7 @@ export default function FormResults(props) {
                                 {`Your score is`}
                         </Box>
                         <Box sx={{fontSize: 70, fontWeight: 'bold'}}>
-                            XX
+                        <div>{generalScore}</div>                        
                         </Box>
                     </Box>
 
@@ -32,7 +32,7 @@ export default function FormResults(props) {
                             {`The score of your city is`}
                         </Box>
                         <Box sx={{fontSize: 70, fontWeight: 'bold'}}>
-                            XX
+                        <div>{generalScore}</div> 
                         </Box>
                     </Box>
                 </Box>

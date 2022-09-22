@@ -3,11 +3,11 @@ import axios from 'axios'
 import Q5Chart from '../Graphs/Q5Chart';
 import Context from '../Context/Context';
 export default function Q1Card() {
-  const[first, setFirst] = useState("90") 
-  const[sec, setSec] = useState("90") 
-  const[third, setThird] = useState("90") 
-  const[four, setFour] = useState("90") 
-  const[fifth, setFifth] = useState("90") 
+  const[first, setFirst] = useState("") 
+  const[sec, setSec] = useState("") 
+  const[third, setThird] = useState("") 
+  const[four, setFour] = useState("") 
+  const[fifth, setFifth] = useState("") 
 
   const{ q5} = useContext(Context)
 
@@ -30,15 +30,18 @@ export default function Q1Card() {
 
 
   useEffect(() => {
+    if(q5)
     getNumb()
-  }, [])
-
+  }, [q5])
 
   return (
     <div className='scoreCards'>
-        <h3 className='scoreCards_title'>{q5.text}</h3>
-        <Q5Chart first={first} sec={sec} third={third} four={four} fifth={fifth}/>
-        <p className='scoreCards_info_users'>100000 Answers</p>
-    </div>
+    {first && <>
+    <h3 className='scoreCards_title'>{q5.text}</h3>
+           <Q5Chart first={first} sec={sec} third={third} four={four} fifth={fifth}/>
+          <p className='scoreCards_info_users'>100000 Answers</p>
+    </>
+        }
+        </div>
   )
 }

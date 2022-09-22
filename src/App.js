@@ -1,9 +1,9 @@
-import "./App.css";
-import React, { useEffect, useState } from "react";
-import FormPage from "./Pages/FormPage";
-import FormResults from "./Pages/FormResults";
-
-import Dashboard from "./Pages/Dashboard";
+import './App.css';
+import React, {useEffect,useState} from 'react'
+import FormPage from './Pages/FormPage';
+import FormResults from './Pages/FormResults';
+import Navbar from './Components/Navbar';
+import Dashboard from './Pages/Dashboard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Context from "./Components/Context/Context";
 import axios from "axios";
@@ -18,7 +18,8 @@ function App() {
   const [q7, setQ7] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({});
-  const [score, setScore] = useState(null);
+  const [generalScore, setGeneralScore] = useState("");
+
   const [formQuestions, setFormQuestions] = useState({
     // FWB1_3: "",
     // FWB1_5: "",
@@ -45,9 +46,26 @@ function App() {
     }
   }
 
+
   useEffect(() => {
     getquestions();
+    getgeneralScore()
+
   }, []);
+
+  async function getgeneralScore() {
+    try {
+      const res = await axios.get(
+        "http://localhost:8080/surveys/totalScore "
+      );
+    
+      setGeneralScore(res.data.totalScore)
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
 
   return (
     <BrowserRouter>
@@ -64,13 +82,12 @@ function App() {
             showForm,
             formData,
             setFormData,
-            score,
-            setScore,
             formQuestions,
-            setFormQuestions,
+            setFormQuestions,generalScore, setGeneralScore
           }}
         >
-          <header className="">
+            <Navbar/> 
+          <header className="page">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/FormPage" element={<FormPage />} />
@@ -79,6 +96,7 @@ function App() {
           </header>
         </Context.Provider>
       </div>
+
     </BrowserRouter>
   );
 }
