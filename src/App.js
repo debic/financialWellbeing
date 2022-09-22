@@ -2,6 +2,8 @@ import './App.css';
 import React, {useEffect,useState} from 'react'
 import FormPage from './Pages/FormPage';
 import FormResults from './Pages/FormResults';
+import NavBar from './Components/NavBar/NavBar';
+
 
 import Dashboard from './Pages/Dashboard';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -46,18 +48,20 @@ function App() {
 
   return (
     <BrowserRouter>
-    <div className="App">
     <Context.Provider value={{ q1,q2,q3,q4,q5,q6, q7, showForm}}>
-
-      <header className="">
-      <Routes>
+    <div className="container">
+        <aside>
+          <NavBar />
+        </aside>
+        <main className="scroll">
+        <Routes>
       <Route path="/" element={ <Dashboard />}/>
       <Route path="/FormPage" element={ <FormPage/>}/>
       <Route path="/FormResults" element={ <FormResults/>}/>
       </Routes>
-      </header>
-      </Context.Provider>
-    </div>
+        </main>
+      </div>
+    </Context.Provider>  
     </BrowserRouter>
   );
 }
