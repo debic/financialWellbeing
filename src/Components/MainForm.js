@@ -6,7 +6,7 @@ import Context from './Context/Context';
 
 export default function MainForm(props) {
 
-  const { q1, q2, q3, q4, q5, q6, q7, setFormQuestions, formData, setFormData, setGeneralScore } = useContext(Context)
+  const { q1, q2, q3, q4, q5, q6, q7, setFormQuestions, formData, setFormData, setUserScore } = useContext(Context)
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   function handleChangeSelect(event) {
@@ -20,14 +20,14 @@ export default function MainForm(props) {
   async function handleSubmit(event) {
     console.log(formData);
     try {
-      const response = axios.post(`http://localhost:8080/surveys`, formData);
+      const response = await axios.post(`http://localhost:8080/surveys`, formData);
       console.log(response)
       setIsLoading(false);
-      setGeneralScore(response.data);
+      setUserScore(response?.data?.score);
       navigate('/FormResults');
     } catch (error) {
       console.log(error);
-      setGeneralScore(null);
+      setUserScore(null);
     }
     setIsLoading(false);
   }

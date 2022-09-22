@@ -19,7 +19,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({});
   const [generalScore, setGeneralScore] = useState("");
-
+  const [userScore, setUserScore] = useState("");
   const [formQuestions, setFormQuestions] = useState({
     // FWB1_3: "",
     // FWB1_5: "",
@@ -83,7 +83,7 @@ function App() {
             formData,
             setFormData,
             formQuestions,
-            setFormQuestions,generalScore, setGeneralScore
+            setFormQuestions,generalScore, setGeneralScore, userScore, setUserScore
           }}
         >
             <Navbar/> 
