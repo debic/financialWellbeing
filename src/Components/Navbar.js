@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate,Link } from "react-router-dom";
 import img from '../Img/img.png'
+import logo from '../Img/logo.png'
 
 export default function Navbar() {
 
@@ -8,9 +9,10 @@ export default function Navbar() {
   return (
 	<div className="vertical-nav bg-dark" id="sidebar">
 
-
-  		<p className="text-white font-weight-bold text-uppercase px-3 small pb-4 mb-0">Logo</p>
-
+<div>
+		<img src={logo} alt="cfh" className="logo"/>
+		</div>
+		<div >
   		<ul className="nav flex-column bg-dark mb-0 navbar">
 			  
     		<li className="nav-item">
@@ -22,6 +24,7 @@ export default function Navbar() {
     		</li>
   
   		</ul>
+		  </div>
 
 	<img src={img} alt="Dog" className=""/>
 

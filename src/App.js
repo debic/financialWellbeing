@@ -17,6 +17,8 @@ function App() {
   const[q5, setQ5] = useState("") 
   const[q6, setQ6] = useState("") 
   const[q7, setQ7] = useState("") 
+  const[generalScore, setGeneralScore] = useState("") 
+
   const [showForm, setShowForm] = useState(false) 
 
 
@@ -39,14 +41,28 @@ function App() {
     }
   }
 
+  async function getgeneralScore() {
+    try {
+      const res = await axios.get(
+        "http://localhost:8080/surveys/totalScore "
+      );
+    
+      setGeneralScore(res.data.totalScore)
+
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
     useEffect(() => {
     getquestions()
+    getgeneralScore()
   }, [])
 
   return (
     <BrowserRouter>
     <div className="App">
-    <Context.Provider value={{ q1,q2,q3,q4,q5,q6, q7}}>
+    <Context.Provider value={{ q1,q2,q3,q4,q5,q6, q7,generalScore}}>
       <Navbar/>
       <header className="page">
       <Routes>

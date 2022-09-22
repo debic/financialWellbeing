@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import Chart from "react-apexcharts";
+import { useContext } from 'react';
+import Context from '../Context/Context';
 
 
     class MunicipalityComparation extends Component {
+     // const{ generalScore} = useContext(Context)
+
         constructor(props) {
           super(props);
       
@@ -17,7 +21,7 @@ import Chart from "react-apexcharts";
                 fill: {
                     colors: [function({ value, seriesIndex, w }) {
                       if(value === 55) {
-                          return '#0C0C0C'
+                          return '#22252A'
                       } else if (value >= 55 && value < 80) {
                           return '#ffffff'
                       } else {

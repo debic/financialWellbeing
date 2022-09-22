@@ -17,11 +17,12 @@ export default function Dashboard() {
         <GeneralScoreCard/>
         <Q1Card/>
         <Q2Card/>
-        <Q3Card/>
+
         <Q4Card/>
         <Q5Card/>
         <Q6Card/>
         <Q7Card/>
+        <Q3Card/>
 
     </div>
   )
