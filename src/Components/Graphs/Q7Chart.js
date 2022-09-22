@@ -9,6 +9,8 @@ class Q7Chart extends Component {
     this.state = {
       options: {
 
+      
+
           fill: {
               colors: [function({ value, seriesIndex, w }) {
                 if(value === 55) {

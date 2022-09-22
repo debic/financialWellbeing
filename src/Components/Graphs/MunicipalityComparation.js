@@ -8,6 +8,11 @@ import Chart from "react-apexcharts";
       
           this.state = {
             options: {
+              dataLabels:{
+                style:{
+                  colors:['#F99746']
+                }
+              },
 
                 fill: {
                     colors: [function({ value, seriesIndex, w }) {
@@ -29,6 +34,7 @@ import Chart from "react-apexcharts";
                     }
                   }
               },
+           
               legend: {
               }
             },
