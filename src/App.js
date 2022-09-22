@@ -25,6 +25,7 @@ function App() {
       const res = await axios.get(
         "http://localhost:8080/questions"
       );
+      console.log(res)
       setQ1(res.data[0])
       setQ2(res.data[1])
       setQ3(res.data[2])

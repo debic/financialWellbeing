@@ -21,7 +21,7 @@ import Chart from "react-apexcharts";
                     }],
                   },
               xaxis: {
-                categories: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'],
+                categories: ['Not at all', "Very little", "Somewhat", "Very well", "Completely"],
       
               },
               legend: {

@@ -21,7 +21,7 @@ class Q2Chart extends Component {
               }],
             },
         xaxis: {
-          categories: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'],
+          categories: ['Not at all', "Very little", "Somewhat", "Very well", "Completely"],
 
         },
         legend: {
